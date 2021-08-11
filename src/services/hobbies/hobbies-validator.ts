@@ -1,10 +1,9 @@
-import Joi from 'joi';
+import {Joi} from 'joi';
 import { Types } from 'mongoose';
 const { ObjectId } = Types;
 import constants from '../../constants';
 import Hobbies from '../../models/hobbies/Ihobbies';
 const { PASSIONLEVELKEYS } = constants;
-console.log({ PASSIONLEVELKEYS });
 
 class HobbiesValidator {
   private constants;
@@ -14,7 +13,6 @@ class HobbiesValidator {
     this.Joi = Joi;
   }
   createHobbies(data:Hobbies) {
-    console.log(data);
 
     //const { Joi } = this;
     const schema = {

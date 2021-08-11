@@ -1,6 +1,5 @@
 import * as joi from 'joi';
 import { EnvVars } from '../interfaces/database';
-console.log(process.env.NODE_ENV);
 
 // required environment variables
 ['NODE_ENV', 'PORT', 'MONGODB_URI'].forEach((name) => {

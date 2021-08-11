@@ -15,7 +15,6 @@ class UserRepository {
   }
 
   async updateHobbies({ userId, body }): Promise<User> {
-    console.log(body);
 
     return UserModel.findOneAndUpdate(
       { _id: userId },
