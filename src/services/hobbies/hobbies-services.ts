@@ -6,7 +6,6 @@ const PASSIONLEVEL = 'passionLevel';
 
 class HobbiesServices {
   async createHobbies(requestContext) {
-    console.log({ requestContext });
 
     try {
       const data = await hobbiesValidator.createHobbies(requestContext.body);
