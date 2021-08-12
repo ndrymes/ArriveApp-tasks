@@ -16,7 +16,7 @@ const mockHobbiesRepository = userRepository as jest.Mocked<
 // Records Api test
 
 /**
- * The api test for hobbies record tests that when the route is called,
+ * The api test for users record tests that when the route is called,
  * the correct response is returned and also that the correct status code is returned
  */
 
