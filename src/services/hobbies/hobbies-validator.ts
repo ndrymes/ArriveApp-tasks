@@ -5,6 +5,12 @@ import constants from '../../constants';
 import Hobbies from '../../models/hobbies/Ihobbies';
 const { PASSIONLEVELKEYS } = constants;
 
+ /**
+     * @description create hobbies 
+     * @param {Object} constants- Http Request object
+     * @param {Object} Joi
+     * @returns {Object} returns object of the required response
+     */
 class HobbiesValidator {
   private constants;
   private Joi;

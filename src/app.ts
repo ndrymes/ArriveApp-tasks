@@ -10,9 +10,9 @@ const { middleware, database } = config;
 
 const app = express();
 
-// Attempt database connection
 
 export const appCore = () => {
+  // Attempt database connection
   database();
 
   app.use(middleware);

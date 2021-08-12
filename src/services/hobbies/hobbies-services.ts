@@ -4,10 +4,15 @@ const hobbiesRepository = new HobbiesRepository();
 const PASSIONLEVEL = 'passionLevel';
 //const responseHelper = require("../../helpers/http-response");
 
+ /**
+     * @description create hobbies 
+     * @param {Object} requestContex - Http Request object
+     */
 class HobbiesServices {
-  async createHobbies(requestContext) {
 
+  async createHobbies(requestContext) {
     try {
+      //validate request body
       const data = await hobbiesValidator.createHobbies(requestContext.body);
       data.passionLevel = data.passionLevel.toUpperCase();
       return hobbiesRepository.saveHobbies({ body: data });
@@ -18,8 +23,9 @@ class HobbiesServices {
   async updateHobbies(requestContext) {
     try {
       const { hobbiesId } = requestContext.params;
-      // passionLevel = passionLevel === null ? null : passionLevel.toUpperCase;
+      //validate hobbies Id
       await hobbiesValidator.validateId({ id: hobbiesId });
+      //validate request body
       const data = await hobbiesValidator.updateHobbies(requestContext.body);
       if (data.hasOwnProperty(PASSIONLEVEL)) {
         data.passionLevel = data.passionLevel.toUpperCase();
@@ -27,8 +33,6 @@ class HobbiesServices {
 
       return hobbiesRepository.updateHobbies({ hobbiesId, body: data });
     } catch (e) {
-      // We attach the code validation error caused by bad request
-      // e.code = responseHelper.responseCodes.badRequest;
       throw e;
     }
   }
@@ -36,6 +40,7 @@ class HobbiesServices {
   async fetchHobbies(requestContext) {
     try {
       const { hobbiesId } = requestContext.params;
+       //validate hobbies Id
       const data = await hobbiesValidator.validateId({ id: hobbiesId });
       return hobbiesRepository.fetchHobbies({ hobbiesId: data });
     } catch (e) {
@@ -48,6 +53,7 @@ class HobbiesServices {
   async deleteHobbies(requestContext) {
     try {
       const { hobbiesId } = requestContext.params;
+       //validate hobbies Id
       const data = await hobbiesValidator.validateId({ id: hobbiesId });
       return hobbiesRepository.deleteHobbies({ hobbiesId: data });
     } catch (e) {

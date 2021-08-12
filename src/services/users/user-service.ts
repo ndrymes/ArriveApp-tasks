@@ -3,9 +3,15 @@ import { userRepository } from '../../repositories/users';
 const HOBBIES = 'hobbies';
 //const responseHelper = require("../../helpers/http-response");
 
+
+/**
+     * @description create hobbies 
+     * @param {Object} requestContex - Http Request object
+     */
 class UsersServices {
   async createUsers(requestContext) {
     try {
+      //validates request body
       const data = await usersValidator.createUsers(requestContext.body);
       return userRepository.saveUsers({ body: data });
     } catch (e) {
@@ -17,7 +23,8 @@ class UsersServices {
   async updateUsers(requestContext) {
     try {
       const { userId } = requestContext.params;
-      // passionLevel = passionLevel === null ? null : passionLevel.toUpperCase;
+
+      //validate Id
       await usersValidator.validateId({ id: userId });
       const data = await usersValidator.updateUsers(requestContext.body);
       return userRepository.updateUser({ userId, body: data });
@@ -30,7 +37,8 @@ class UsersServices {
   async updateHobbies(requestContext) {
     try {
       const { userId } = requestContext.params;
-      // passionLevel = passionLevel === null ? null : passionLevel.toUpperCase;
+
+       //validate Id
       await usersValidator.validateId({ id: userId });
       const data = await usersValidator.updateHobbies(requestContext.body);
       if (data.hasOwnProperty(HOBBIES)) {
@@ -49,6 +57,7 @@ class UsersServices {
   async fetchUsers(requestContext) {
     try {
       const { userId } = requestContext.params;
+       //validate Id
       const data = await usersValidator.validateId({ id: userId });
       return userRepository.fetchUser({ userId: data });
     } catch (e) {
@@ -61,6 +70,7 @@ class UsersServices {
   async deleteUsers(requestContext) {
     try {
       const { userId } = requestContext.params;
+       //validate Id
       const data = await usersValidator.validateId({ id: userId });
       return userRepository.deleteUser({ userId: data });
     } catch (e) {
