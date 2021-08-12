@@ -9,8 +9,7 @@ class UsersValidator {
   }
   createUsers(data) {
 
-
-    //const { Joi } = this;
+    const { Joi } = this;
     const schema = {
       name: Joi.string().required(),
     };
