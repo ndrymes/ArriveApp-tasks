@@ -1,4 +1,4 @@
-# getir Test
+# Arrive Test
 
 The task is to build a RESTful API to fetch  users and hobbies records data from a remote database.
 
