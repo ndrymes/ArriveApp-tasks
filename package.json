@@ -5,9 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
+    "coverage": "npm test -- --coverage",
     "dev": "npm run build:live",
     "build": "tsc -p .",
-    "start": "npm run build node dist/server.js",
+    "start": "node dist/server.js",
     "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/server.ts",
     "prettier:base": "prettier --parser typescript --single-quote",
     "prettier:check": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx}\"",

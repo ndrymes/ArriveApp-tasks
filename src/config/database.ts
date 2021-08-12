@@ -5,7 +5,6 @@ import envVars from './env-vars';
 
 debug('arrive:server');
 const { databaseUrl } = envVars;
-console.log({ databaseUrl });
 
 const databaseConnectionOptions = {
   useNewUrlParser: true,

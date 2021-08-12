@@ -13,7 +13,7 @@ const mockHobbiesRepository = userRepository as jest.Mocked<
   typeof userRepository
 >;
 
-// Records Api test
+// Users Api test
 
 /**
  * The api test for users record tests that when the route is called,
@@ -37,7 +37,7 @@ describe(`POST ${VERSIONS.V1}${PATHS.HOBBIES}`, () => {
     mockHobbiesRepository.saveUsers.mockImplementation(jest.fn())
   );
 
-  it('should respond with json containing a list of records with the correct status code', async () => {
+  it('should respond with json containing a list of users records with the correct status code', async () => {
     // Arrange
     const api = `${VERSIONS.V1}${PATHS.USERS}`;
 
