@@ -1,4 +1,4 @@
-import {Joi} from 'joi';
+import Joi from 'joi';
 import { Types } from 'mongoose';
 const { ObjectId } = Types;
 import constants from '../../constants';
