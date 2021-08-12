@@ -1,7 +1,7 @@
 import { payload } from '../mock-payload';
 import { hobbiesRepository } from '../../repositories/index';
 import { hobbiesServices } from '../../services/hobbies';
-jest.mock('../../repositories/hobbies.ts');
+jest.mock('../../repositories/hobbies');
 const { MockHobbiesRequestPayload, MockHobbiesResponsePayload } = payload;
 const mockHobbiesRepository = hobbiesRepository as jest.Mocked<
   typeof hobbiesRepository

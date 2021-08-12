@@ -69,7 +69,7 @@ The default endpoint is an health check endpoint that returns a success response
 
 # Project Structure
 
-![file structure](https://ibb.co/Gd7FbSX)
+![file structure](https://pasteboard.co/KfvpVyw.png)
 
 <a href="https://blog.logrocket.com/the-perfect-architecture-flow-for-your-next-node-js-project/">Source information on  LogRocket</a>
 

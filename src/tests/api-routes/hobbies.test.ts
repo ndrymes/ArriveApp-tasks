@@ -5,9 +5,10 @@ import { hobbiesRepository } from '../../repositories/index';
 import { responseHelper } from '../../helpers';
 import { payload } from '../mock-payload';
 import constants from '../../constants';
-const { ROUTES } = constants;
-const { VERSIONS, PATHS } = ROUTES;
-jest.mock('../../repositories/hobbies.ts');
+const {
+  ROUTES: { VERSIONS, PATHS },
+} = constants;
+jest.mock('../../repositories/hobbies');
 
 const mockHobbiesRepository = hobbiesRepository as jest.Mocked<
   typeof hobbiesRepository
@@ -25,7 +26,6 @@ let server;
 let requestTester;
 
 describe(`POST ${VERSIONS.V1}${PATHS.HOBBIES}`, () => {
-  
   beforeAll(async () => {
     app = await appCore();
     server = app.listen(3000);
